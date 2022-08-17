@@ -1,0 +1,32 @@
+CREATE TABLE shoes (id INTEGER PRIMARY KEY, brand TEXT, color TEXT, size INTEGER, price INTEGER);
+
+INSERT INTO shoes VALUES (1, "Nike", "White", 7, 100);
+INSERT INTO shoes VALUES (2, "Adidas", "Blue", 9, 89);
+INSERT INTO shoes VALUES (3, "Birkenstock", "Brown", 5, 99);
+INSERT INTO shoes VALUES (4, "OnCloud", "White", 8, 150);
+INSERT INTO shoes VALUES (5, "Tory", "Black", 7.5, 199);
+INSERT INTO shoes VALUES (6, "Puma", "Yellow", 4, 55);
+INSERT INTO shoes VALUES (7, "Asics", "Orange", 8, 45);
+INSERT INTO shoes VALUES (8, "Puma", "Purple", 3, 89);
+INSERT INTO shoes VALUES (9, "Converse", "White", 7, 120);
+INSERT INTO shoes VALUES (10, "Nike", "Black", 9.4, 129);
+INSERT INTO shoes VALUES (11, "HeyDudes", "Tan", 11, 65);
+INSERT INTO shoes VALUES (12, "Yeezy", "Tan", 10, 200);
+INSERT INTO shoes VALUES (13, "Steve Madden", "White", 8, 99);
+INSERT INTO shoes VALUES (14, "Adidas", "Green", 7, 78);
+INSERT INTO shoes VALUES (15, "Birkenstock", "Blue", 5, 110);
+
+--sum price of all shoes combined--
+SELECT SUM(price) 
+FROM shoes;
+
+--display the prices lowest to highest-- 
+SELECT * 
+FROM shoes
+ORDER BY price asc; 
+
+--top 5 most expensive shoes--
+SELECT * 
+FROM shoes 
+ORDER BY price desc
+LIMIT 5 
