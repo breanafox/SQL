@@ -57,6 +57,18 @@ SELECT * FROM solar_system_objects;
 
 SELECT * FROM solar_system_objects WHERE type_of_object LIKE "%planet%";
 
+--*sort body,volume,mass,density where mass is greater than or = to 20 and density is equal than or greater than 3. group by volume asc*--
+
+SELECT body, volume, mass, density FROM solar_system_objects WHERE mass >= 20 and density >= 3 ORDER BY volume asc;
+
+--*find all where volume is greater than Mars*-- 
+
+SELECT body, volume FROM solar_system_objects WHERE volume > (SELECT volume FROM solar_system_objects WHERE body = "Mars") GROUP BY volume;
+
+--*select all that have mass greater than 3*--
+
+SELECT * FROM solar_system_objects GROUP BY mass HAVING mass > 3;
+
 --*count how many object fit in each density category*--
 
 SELECT COUNT(*),
@@ -74,7 +86,3 @@ GROUP BY density_values;
 
 --*avg volume of all objects*--
 SELECT AVG(volume) AS average_volume FROM solar_system_objects 
-
---*find all where surface gravity is greater than Mars*--
-SELECT body, surface_gravity FROM solar_system_objects WHERE surafce_gravity > 
-    (SELECT surface_gravity FROM solar_system_objects WHERE body = "Mars");
