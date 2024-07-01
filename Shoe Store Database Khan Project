@@ -29,4 +29,4 @@ ORDER BY price asc;
 SELECT * 
 FROM shoes 
 ORDER BY price desc
-LIMIT 5 
+LIMIT 5;
